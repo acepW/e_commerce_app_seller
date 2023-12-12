@@ -35,7 +35,7 @@ class UploadProductForm extends StatefulWidget {
 
 class _UploadProductFormState extends State<UploadProductForm> {
   final _formKey = GlobalKey<FormState>();
-  String _catValue = 'Elektronik';
+  String _catValue = 'Sayuran';
   late final TextEditingController _titleController,
       _priceController,
       _deskripsiController;
@@ -457,33 +457,51 @@ class _UploadProductFormState extends State<UploadProductForm> {
           items: const [
             DropdownMenuItem(
               child: Text(
-                'Elektronik',
+                'Sayuran',
               ),
-              value: 'Elektronik',
+              value: 'Sayuran',
             ),
             DropdownMenuItem(
               child: Text(
-                'Sparepart',
+                'Ternak',
               ),
-              value: 'Sparepart',
+              value: 'Ternak',
             ),
             DropdownMenuItem(
               child: Text(
-                'House',
+                'Makanan',
               ),
-              value: 'House',
+              value: 'Makanan',
             ),
             DropdownMenuItem(
               child: Text(
-                'Clothes',
+                'Minuman',
               ),
-              value: 'Clothes',
+              value: 'Minuman',
             ),
             DropdownMenuItem(
               child: Text(
-                'Kitchen',
+                'Bibit',
               ),
-              value: 'Kitchen',
+              value: 'Bibit',
+            ),
+            DropdownMenuItem(
+              child: Text(
+                'Alat',
+              ),
+              value: 'Alat',
+            ),
+            DropdownMenuItem(
+              child: Text(
+                'Obat',
+              ),
+              value: 'Obat',
+            ),
+            DropdownMenuItem(
+              child: Text(
+                'Jasa',
+              ),
+              value: 'Jasa',
             ),
             DropdownMenuItem(
               child: Text(

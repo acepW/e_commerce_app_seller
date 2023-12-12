@@ -545,24 +545,36 @@ class _EditProductScreenState extends State<EditProductScreen> {
         style: TextStyle(color: color),
         items: const [
           DropdownMenuItem<String>(
-            child: Text('Elektronik'),
-            value: 'Elektronik',
+            child: Text('Sayuran'),
+            value: 'Sayuran',
           ),
           DropdownMenuItem<String>(
-            child: Text('Sparepart'),
-            value: 'Sparepart',
+            child: Text('Ternak'),
+            value: 'Ternak',
           ),
           DropdownMenuItem<String>(
-            child: Text('House'),
-            value: 'House',
+            child: Text('Makanan'),
+            value: 'Makanan',
           ),
           DropdownMenuItem<String>(
-            child: Text('Clothes'),
-            value: 'Clothes',
+            child: Text('Minuman'),
+            value: 'Minuman',
           ),
           DropdownMenuItem<String>(
-            child: Text('Kitchen'),
-            value: 'Kitchen',
+            child: Text('Bibit'),
+            value: 'Bibit',
+          ),
+          DropdownMenuItem<String>(
+            child: Text('Alat'),
+            value: 'Alat',
+          ),
+          DropdownMenuItem<String>(
+            child: Text('Obat'),
+            value: 'Obat',
+          ),
+          DropdownMenuItem<String>(
+            child: Text('Jasa'),
+            value: 'Jasa',
           ),
           DropdownMenuItem<String>(
             child: Text('Others'),
