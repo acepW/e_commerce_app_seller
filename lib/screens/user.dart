@@ -38,6 +38,7 @@ class _UserScreenState extends State<UserScreen> {
   String? _email;
   String? _name;
   String? address;
+  num? _saldo = 0;
   bool _isLoading = false;
   final User? user = authInstance.currentUser;
   @override
@@ -68,6 +69,7 @@ class _UserScreenState extends State<UserScreen> {
         _name = userDoc.get('name');
         address = userDoc.get('alamat');
         _addressTextController.text = userDoc.get('alamat');
+        _saldo = userDoc.get('saldo');
       }
     } catch (error) {
       setState(() {
@@ -126,6 +128,14 @@ class _UserScreenState extends State<UserScreen> {
                 ),
                 TextWidget(
                   text: _email == null ? 'Email' : _email!,
+                  color: color,
+                  textSize: 18,
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                TextWidget(
+                  text: "Saldo : Rp." + _saldo!.toStringAsFixed(2),
                   color: color,
                   textSize: 18,
                 ),

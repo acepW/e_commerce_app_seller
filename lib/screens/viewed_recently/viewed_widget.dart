@@ -3,7 +3,6 @@ import 'package:e_commerce_app_seller/models/viewed_model.dart';
 import 'package:e_commerce_app_seller/providers/viewed_prod_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:provider/provider.dart';
 import '../../consts/firebase_consts.dart';
@@ -49,9 +48,9 @@ class _ViewedRecentlyWidgetState extends State<ViewedRecentlyWidget> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            FancyShimmerImage(
-              imageUrl: getCurrentProduct.imageUrl,
-              boxFit: BoxFit.fill,
+            Image.network(
+              getCurrentProduct.imageUrl,
+              fit: BoxFit.fill,
               height: size.width * 0.27,
               width: size.width * 0.25,
             ),

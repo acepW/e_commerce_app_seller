@@ -1,4 +1,3 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:e_commerce_app_seller/models/cart_model.dart';
 import 'package:e_commerce_app_seller/providers/products_provider.dart';
 import 'package:e_commerce_app_seller/widgets/heart_btn.dart';
@@ -76,9 +75,9 @@ class _CartWidgetState extends State<CartWidget> {
                       width: size.width * 0.25,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12.0)),
-                      child: FancyShimmerImage(
-                        imageUrl: getCurrentProduct.imageUrl,
-                        boxFit: BoxFit.fill,
+                      child: Image.network(
+                        getCurrentProduct.imageUrl,
+                        fit: BoxFit.fill,
                       ),
                     ),
                     Expanded(

@@ -1,4 +1,3 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:e_commerce_app_seller/inner_screens/product_details.dart';
 import 'package:e_commerce_app_seller/models/products_model.dart';
 import 'package:e_commerce_app_seller/models/wishlist_model.dart';
@@ -56,9 +55,9 @@ class WishlistWidget extends StatelessWidget {
                   margin: const EdgeInsets.only(left: 8),
                   // width: size.width * 0.2,
                   height: size.width * 0.25,
-                  child: FancyShimmerImage(
-                    imageUrl: getCurrentProduct.imageUrl,
-                    boxFit: BoxFit.fill,
+                  child: Image.network(
+                    getCurrentProduct.imageUrl,
+                    fit: BoxFit.fill,
                   ),
                 ),
               ),

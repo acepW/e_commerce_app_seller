@@ -1,4 +1,3 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:e_commerce_app_seller/models/products_model.dart';
 import 'package:e_commerce_app_seller/providers/cart_provider.dart';
@@ -63,11 +62,11 @@ class _OnSaleWidgetState extends State<OnSaleWidget> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    FancyShimmerImage(
-                      imageUrl: productModel.imageUrl,
+                    Image.network(
+                      productModel.imageUrl,
                       height: size.width * 0.22,
                       width: size.width * 0.22,
-                      boxFit: BoxFit.fill,
+                      fit: BoxFit.fill,
                     ),
                     Column(
                       children: [

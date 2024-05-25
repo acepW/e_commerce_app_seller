@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:e_commerce_app_seller/models/orders_model.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +33,6 @@ class _OrderWidgetState extends State<OrderWidget> {
     final Color color = Utils(context).color;
     Size size = Utils(context).getScreenSize;
     final productProvider = Provider.of<ProductsProvider>(context);
-  
 
     Widget buttonOrders = Container();
 
@@ -104,10 +102,10 @@ class _OrderWidgetState extends State<OrderWidget> {
             // GlobalMethods.navigateTo(
             //     ctx: context, routeName: ProductDetails.routeName);
           },
-          leading: FancyShimmerImage(
+          leading: Image.network(
+            ordersModel.imageUrl,
             width: size.width * 0.2,
-            imageUrl: ordersModel.imageUrl,
-            boxFit: BoxFit.fill,
+            fit: BoxFit.fill,
           ),
           title: TextWidget(
               text: '${ordersModel.title} x${ordersModel.quantity}',
@@ -124,7 +122,9 @@ class _OrderWidgetState extends State<OrderWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextWidget(text: "Status     :", color: color, textSize: 18),
-              Flexible(child: TextWidget(text: ordersModel.status, color: color, textSize: 18)),
+              Flexible(
+                  child: TextWidget(
+                      text: ordersModel.status, color: color, textSize: 18)),
             ],
           ),
         )),
@@ -151,7 +151,9 @@ class _OrderWidgetState extends State<OrderWidget> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextWidget(text: "Alamat  :", color: color, textSize: 18),
-              SizedBox(width: 10,),
+              SizedBox(
+                width: 10,
+              ),
               Flexible(
                 child: TextWidget(
                     text: ordersModel.alamatUser, color: color, textSize: 18),
@@ -166,7 +168,8 @@ class _OrderWidgetState extends State<OrderWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TextWidget(text: "Metode Pengiriman :", color: color, textSize: 18),
+              TextWidget(
+                  text: "Metode Pengiriman :", color: color, textSize: 18),
               Flexible(
                 child: TextWidget(
                     text: ordersModel.pengambilan, color: color, textSize: 18),
@@ -174,14 +177,15 @@ class _OrderWidgetState extends State<OrderWidget> {
             ],
           ),
         )),
-         Container(
+        Container(
             child: Padding(
           padding: const EdgeInsets.only(left: 15, right: 15),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TextWidget(text: "Metode pembayaran :", color: color, textSize: 18),
+              TextWidget(
+                  text: "Metode pembayaran :", color: color, textSize: 18),
               Flexible(
                 child: TextWidget(
                     text: ordersModel.pembayaran, color: color, textSize: 18),

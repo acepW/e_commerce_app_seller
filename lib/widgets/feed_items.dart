@@ -1,5 +1,4 @@
 import 'package:e_commerce_app_seller/screens/crud_produk/edit_prod.dart';
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:e_commerce_app_seller/providers/cart_provider.dart';
 import 'package:e_commerce_app_seller/services/global_methods.dart';
@@ -76,11 +75,11 @@ class _FeedsWidgetState extends State<FeedsWidget> {
           },
           borderRadius: BorderRadius.circular(12),
           child: Column(children: [
-            FancyShimmerImage(
-              imageUrl: productModel.imageUrl,
+            Image.network(
+              productModel.imageUrl,
               height: size.width * 0.21,
               width: size.width * 0.2,
-              boxFit: BoxFit.fill,
+              fit: BoxFit.fill,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),

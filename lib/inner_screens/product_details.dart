@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:e_commerce_app_seller/models/user_model.dart';
 import 'package:e_commerce_app_seller/screens/chat_screen/halaman_chat.dart';
 import 'package:e_commerce_app_seller/services/firebase_const.dart';
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:e_commerce_app_seller/providers/products_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -81,9 +80,9 @@ class _ProductDetailsState extends State<ProductDetails> {
         body: Column(children: [
           Flexible(
             flex: 2,
-            child: FancyShimmerImage(
-              imageUrl: getCurrentProduct.imageUrl,
-              boxFit: BoxFit.scaleDown,
+            child: Image.network(
+              getCurrentProduct.imageUrl,
+              fit: BoxFit.scaleDown,
               width: size.width,
               // height: screenHeight * .4,
             ),
@@ -305,7 +304,6 @@ class _ProductDetailsState extends State<ProductDetails> {
                               //     title:
                               //         " $myNamee mengirim anda sebuah pesan",
                               //     token: widget.fcmtoken);
-
                             } on FirebaseException catch (error) {
                               GlobalMethods.errorDialog(
                                   subtitle: '${error.message}',

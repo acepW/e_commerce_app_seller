@@ -4,7 +4,6 @@ import 'package:e_commerce_app_seller/services/global_methods.dart';
 import 'package:e_commerce_app_seller/services/utils.dart';
 import 'package:e_commerce_app_seller/widgets/price_widget.dart';
 import 'package:e_commerce_app_seller/widgets/text_widget.dart';
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -68,11 +67,11 @@ class _ItemProductNegoState extends State<ItemProductNego> {
         borderRadius: BorderRadius.circular(12),
         color: Theme.of(context).cardColor,
         child: Column(children: [
-          FancyShimmerImage(
-            imageUrl: widget.imageUrl,
+          Image.network(
+            widget.imageUrl,
             height: size.width * 0.21,
             width: size.width * 0.2,
-            boxFit: BoxFit.fill,
+            fit: BoxFit.fill,
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10),

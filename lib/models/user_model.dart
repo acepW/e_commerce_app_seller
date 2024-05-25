@@ -8,6 +8,7 @@ class UserModel {
   final String username;
   final String role;
   final String alamat;
+  final num saldo;
   final List userCart;
   final List userWish;
 
@@ -18,6 +19,7 @@ class UserModel {
     required this.createdAt,
     required this.id,
     required this.email,
+    required this.saldo,
     required this.name,
     required this.role,
     required this.alamat,
@@ -33,6 +35,7 @@ class UserModel {
       name: snapshot["name"],
       username: snapshot["username"],
       id: snapshot["id"],
+      saldo: snapshot["saldo"],
       email: snapshot["email"],
       role: snapshot["role"],
       alamat: snapshot["alamat"],

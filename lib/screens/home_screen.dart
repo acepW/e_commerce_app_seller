@@ -145,20 +145,24 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
 
-            GridView.count(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              crossAxisCount: 2,
-              padding: EdgeInsets.zero,
-              //crossAxisSpacing: 10,
-              childAspectRatio: size.width / (size.height * 0.61),
-              children: List.generate(allProducts.length, (index) {
-                return ChangeNotifierProvider.value(
-                  value: allProducts[index],
-                  child: FeedsWidget(),
-                );
-              }),
-            ),
+            FutureBuilder(
+                future: productProviders.fetchProducts(),
+                builder: (context, snapshot) {
+                  return GridView.count(
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    crossAxisCount: 2,
+                    padding: EdgeInsets.zero,
+                    //crossAxisSpacing: 10,
+                    childAspectRatio: size.width / (size.height * 0.61),
+                    children: List.generate(allProducts.length, (index) {
+                      return ChangeNotifierProvider.value(
+                        value: allProducts[index],
+                        child: const FeedsWidget(),
+                      );
+                    }),
+                  );
+                })
           ],
         ),
       ),

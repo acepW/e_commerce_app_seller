@@ -7,7 +7,7 @@ import 'package:e_commerce_app_seller/models/user_model.dart' as model;
 
 class AuthMethods {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
- final User? user = authInstance.currentUser;
+  final User? user = authInstance.currentUser;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // get user details
@@ -49,6 +49,7 @@ class AuthMethods {
           name: name,
           username: username,
           id: cred.user!.uid,
+          saldo: 0,
           email: email,
           role: role,
           alamat: alamat,
